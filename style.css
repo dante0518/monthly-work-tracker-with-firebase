@@ -216,6 +216,7 @@ main {
     .container {
         width: 100%;
         padding: 20px;
+        margin: auto; /* Centering the container */
     }
 
     h1 {
@@ -242,11 +243,13 @@ main {
     main {
         flex-direction: column;
         gap: 20px;
+        margin: auto; /* Centering the main section */
     }
 
     .login-popup {
         width: 80%;
         padding: 20px;
+        margin: auto; /* Centering the login popup */
     }
 
     .login-popup .close-btn {
@@ -278,3 +281,73 @@ main {
     }
 }
 
+/* Adjust for smaller screens like iPhones */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    select, input[type="date"], button {
+        padding: 8px;
+    }
+
+    .monthly-data, #shiftList, #totalHours, #totalWage {
+        padding: 12px;
+    }
+
+    #shiftList th, #shiftList td {
+        padding: 6px;
+    }
+
+    main {
+        padding: 15px;
+        margin: auto; /* Centering the main section */
+    }
+
+    .login-popup {
+        padding: 15px;
+        margin: auto; /* Centering the login popup */
+    }
+
+    .login-popup .close-btn {
+        right: -15px;
+    }
+
+    .login-popup .form h2 {
+        font-size: 1.3rem;
+    }
+
+    .login-popup .form .form-element label {
+        font-size: 1rem;
+    }
+
+    .login-popup .form .form-element input[type="text"],
+    .login-popup .form .form-element input[type="password"] {
+        padding: 6px;
+    }
+
+    .login-popup .form .form-element button.sign-in,
+    .login-popup .form .form-element button.register {
+        font-size: 0.8rem;
+    }
+
+    .login-popup .form .form-element a {
+        font-size: 0.8rem;
+    }
+
+    /* Centering #shiftList */
+    #shiftList {
+        width: 100%;
+        padding: 15px;
+        margin: auto; /* Centering #shiftList */
+        box-sizing: border-box;
+    }
+
+    #shiftList th, #shiftList td {
+        padding: 6px;
+    }
+}
