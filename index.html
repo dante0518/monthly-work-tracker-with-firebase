@@ -7,6 +7,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="login-popup">
+        <div class="close-btn">&times;</div>
+        <div class="form">
+            <h2>Log in</h2>
+            <div class="form-element">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="emailInput" placeholder="Enter email">
+            </div>
+            <div class="form-element">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="passwordInput" placeholder="Enter password">
+            </div>
+            <div class="form-element">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me">Remember me</label>
+            </div>
+            <div class="form-element">
+                <button class="sign-in" id="login" onclick="login()">Log in</button>
+                <button class="register" id="register" onclick="register()">Register</button>
+            </div>
+            <div class="form-element">
+                <a href="#">Forgot password?</a>
+            </div>
+        </div>
+     </div>
     <main>
         <div class="container">
             <h1>Napi munkaidő rögzítése</h1>
@@ -38,6 +63,7 @@
             <button id="removeShiftButton">Kijelölt műszak eltávolítása</button>
             <button id="save">Mentés</button>
             <button id="saveToFirebaseButton">Mentés adatbázisba</button>
+            <button id="loginButton">Bejelentkezés <br>(not working)</button>
                     
             <!-- <p id="totalHours">Összes munkaidő: 0 óra</p>
             <p id="totalWage">Összeg: 0 Ft</p> -->

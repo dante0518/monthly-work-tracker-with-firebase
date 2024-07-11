@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
-import { getDatabase, ref, get, update } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-database.js";
+import { getDatabase, ref, get, update, set } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-database.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -15,6 +16,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
+const auth = getAuth(app);
 
 let shifts = {};
 let totalWage = 0;
@@ -189,3 +191,110 @@ function calculateMonthlyStats() {
     document.getElementById('monthlyHours').textContent = `Ledolgozott munkaórák a hónapban: ${totalHoursInMonth.toFixed(2)} óra`;
     document.getElementById('monthlyWage').textContent = `Keresett összeg a hónapban: ${totalWageInMonth} Ft`;
 }
+
+
+// REGISTER
+
+window.register = function() {
+    // get all our inputs
+    const email = document.getElementById('emailInput').value;
+    const password = document.getElementById('passwordInput').value;
+
+    // validate input
+    if(!validateEmail(email) || !validatePassword(password)){
+        alert('Your credentials do not match');
+        return;
+    };
+
+      // Create user with email and password
+  createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Get the signed-in user
+    const user = userCredential.user;
+
+    // Add to database
+    const databaseRef = ref(db, 'users/' + user.uid);
+    // Create user data
+    const userData = {
+      email: email,
+      password: password,
+      last_login: Date.now(),
+    };
+
+    set(databaseRef, userData)
+      .then(() => {
+          // Check if .login-popup has the 'active' class and remove it
+          const loginPopup = document.querySelector('.login-popup');
+          if (loginPopup.classList.contains('active')) {
+              loginPopup.classList.remove('active');
+          }
+          alert('User created, you can now login!');
+        //hide popup
+      })
+      .catch((error) => {
+          console.error('Error saving user data:', error);
+      });
+  })
+  .catch((error) => {
+    console.error('Error creating user:', error);
+    alert('Error creating user: ' + error.message);
+  });
+};
+
+// Attach the login function to the window object
+window.login = function() {
+    // Get all our inputs
+    const email = document.getElementById('emailInput').value;
+    const password = document.getElementById('passwordInput').value;
+  
+    // Validate input fields
+    if (!validateEmail(email) || !validatePassword(password)) {
+      alert('Your credentials do not match.');
+      return;
+    }
+  
+    // Authenticate the user
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Get the signed-in user
+        const user = userCredential.user;
+  
+        // Create user data
+        const userData = {
+          last_login: Date.now(),
+        };
+  
+        // Add to database
+        const databaseRef = ref(db, 'users/' + user.uid);
+        update(databaseRef, userData)
+          .then(() => {
+            alert('User logged in successfully!');
+
+          })
+          .catch((error) => {
+            console.error('Error updating user data:', error);
+          });
+      })
+      .catch((error) => {
+        console.error('Error signing in user:', error);
+        alert('Error signing in user: ' + error.message);
+      });
+};
+
+// VALIDATION
+
+function validateEmail(email) {
+    const expression = /^[^@]+@\w+(\.\w+)+\w$/;
+    return expression.test(email);
+  }
+  
+  function validatePassword(password) {
+    return password.length >= 6;
+  }
+  
+  function validateField(field) {
+    return field != null && field.length > 0;
+  }
+  
+  
+  

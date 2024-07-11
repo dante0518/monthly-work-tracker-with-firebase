@@ -10,6 +10,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .container {
@@ -36,7 +37,7 @@ label {
 }
 
 select, input[type="date"], button {
-    width: calc(100% - 24px);
+    width: calc(100% - 0px);
     padding: 12px;
     margin: 10px 0;
     border: 2px solid #666; /* Lighter border */
@@ -66,7 +67,6 @@ button:hover {
     border: 1px solid #444; /* Lighter border */
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05); /* Adjust shadow for dark mode */
-    width: 535px;
 }
 
 .monthly-data p, #shiftList p, #totalHours, #totalWage {
@@ -119,3 +119,162 @@ main {
     margin-top: 50px;
     margin-bottom: 50px;
 }
+
+/*LOGIN*/
+
+.blur{
+    filter: blur(40px)
+}
+
+.login-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    padding: 25px 30px;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 300px;
+    background: #333;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    transition: top 0ms ease-in-out 200ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 20ms ease-in-out 0ms;
+    
+}
+
+.login-popup.active{
+    opacity: 1;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1.3);
+    transition: top 0ms ease-in-out 0ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 200ms ease-in-out 0ms;
+}
+
+.login-popup .close-btn{
+    position: relative;
+    top: -5px;
+    right: -300px;
+    width: 15px;
+    background-color: #888;
+    text-align:center;
+    line-height: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.login-popup .form h2{
+    text-align: center;
+    margin: 10px 0px 20px;
+    font-size: 2rem;
+}
+
+.login-popup .form-element{
+    margin: 15px 0px;
+}
+
+.login-popup .form .form-element label{
+    font-size: 1.3rem;
+}
+
+.login-popup .form .form-element input[type="text"],
+.login-popup .form .form-element input[type="password"]{
+    margin-top: 5px;
+    display: block;
+    width: 90%;
+    padding: 10px;
+    outline: none;
+    border: 2px solid #666;
+    border-radius: 5px;
+    background: transparent;
+    color: #fff
+}
+.login-popup .form .form-element input[type="checkbox"]{
+    margin-right: 6px;
+}
+.login-popup .form .form-element button.sign-in,
+.login-popup .form .form-element button.register{
+    width: 97%;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.login-popup .form .form-element a{
+    display: block;
+    text-align: right;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+
+@media (max-width: 1250px) {
+    .container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    select, input[type="date"], button {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .monthly-data, #shiftList, #totalHours, #totalWage {
+        width: 100%;
+        padding: 15px;
+        margin-top: 10px;
+        box-sizing: border-box;
+    }
+
+    #shiftList th, #shiftList td {
+        padding: 6px;
+    }
+
+    main {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .login-popup {
+        width: 80%;
+        padding: 20px;
+    }
+
+    .login-popup .close-btn {
+        right: -20px;
+    }
+
+    .login-popup .form h2 {
+        font-size: 1.5rem;
+    }
+
+    .login-popup .form .form-element label {
+        font-size: 1.1rem;
+    }
+
+    .login-popup .form .form-element input[type="text"],
+    .login-popup .form .form-element input[type="password"] {
+        width: 95%;
+        padding: 8px;
+    }
+
+    .login-popup .form .form-element button.sign-in,
+    .login-popup .form .form-element button.register {
+        width: 95%;
+        font-size: 0.9rem;
+    }
+
+    .login-popup .form .form-element a {
+        font-size: 0.9rem;
+    }
+}
+
