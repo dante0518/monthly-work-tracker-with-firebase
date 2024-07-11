@@ -2,28 +2,28 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #333; /* Dark background */
-    color: #f0f8ff; /* Light text */
+    background-color: #f0f8ff;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #333;
 }
 
 .container {
-    background-color: #444; /* Darker container background */
+    background-color: #ffffff;
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1); /* Adjust shadow for dark mode */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     width: 80%;
     max-width: 600px;
 }
 
 h1 {
     text-align: center;
-    color: #fafafa; /* Light heading color */
+    color: #444;
     font-size: 26px;
     margin-bottom: 20px;
 }
@@ -32,24 +32,22 @@ label {
     display: block;
     margin-top: 15px;
     font-weight: bold;
-    color: #eee; /* Light label text */
+    color: #555;
 }
 
 select, input[type="date"], button {
     width: calc(100% - 24px);
     padding: 12px;
     margin: 10px 0;
-    border: 2px solid #666; /* Lighter border */
+    border: 2px solid #ddd;
     border-radius: 6px;
     box-sizing: border-box;
     font-size: 16px;
-    background-color: #444; /* Darker input background */
-    color: #eee; /* Light input text */
 }
 
 button {
     background-color: #ff6f61;
-    color: #fff;
+    color: white;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -60,25 +58,27 @@ button:hover {
 }
 
 .monthly-data, #shiftList, #totalHours, #totalWage {
-    background-color: #666; /* Darker section background */
+    background-color: #fafafa;
     padding: 20px;
     margin-top: 10px;
-    border: 1px solid #444; /* Lighter border */
+    border: 1px solid #eee;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05); /* Adjust shadow for dark mode */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     width: 535px;
 }
 
 .monthly-data p, #shiftList p, #totalHours, #totalWage {
     margin: 0;
     padding: 8px 0;
-    color: #ccc; /* Lighter text color */
+    color: #666;
 }
+
+
 
 #shiftList div {
     margin-bottom: 12px;
     padding: 10px;
-    border-bottom: 1px solid #555; /* Lighter border */
+    border-bottom: 1px solid #ddd;
 }
 
 #shiftList p {
@@ -88,34 +88,33 @@ button:hover {
 #totalHours, #totalWage {
     font-weight: bold;
     text-align: center;
-    color: #fafafa; /* Light text color */
 }
 
-#shiftList table {
-    width: 100%;
+
+ #shiftList table {
+    width: 100%; /* Ensure the table uses the full width of its container */
     border-collapse: collapse;
 }
 
 #shiftList th, #shiftList td {
-    border: 1px solid #555; /* Lighter border */
+    border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
 }
 
 #shiftList th {
-    background-color: #444; /* Darker header background */
+    background-color: #f2f2f2;
     font-weight: bold;
-    color: #fafafa; /* Light header text */
 }
 
 #shiftList td {
-    background-color: #555; /* Darker cell background */
-    color: #eee; /* Light cell text */
+    background-color: #ffffff;
 }
 
 main {
-    display: flex;
-    gap: 50px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+display: flex;
+gap: 50px;
+margin-top: 50px;
+margin-bottom: 50px;
+
 }
