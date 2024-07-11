@@ -193,108 +193,108 @@ function calculateMonthlyStats() {
 }
 
 
-// REGISTER
+// // REGISTER
 
-window.register = function() {
-    // get all our inputs
-    const email = document.getElementById('emailInput').value;
-    const password = document.getElementById('passwordInput').value;
+// window.register = function() {
+//     // get all our inputs
+//     const email = document.getElementById('emailInput').value;
+//     const password = document.getElementById('passwordInput').value;
 
-    // validate input
-    if(!validateEmail(email) || !validatePassword(password)){
-        alert('Your credentials do not match');
-        return;
-    };
+//     // validate input
+//     if(!validateEmail(email) || !validatePassword(password)){
+//         alert('Your credentials do not match');
+//         return;
+//     };
 
-      // Create user with email and password
-  createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Get the signed-in user
-    const user = userCredential.user;
+//       // Create user with email and password
+//   createUserWithEmailAndPassword(auth, email, password)
+//   .then((userCredential) => {
+//     // Get the signed-in user
+//     const user = userCredential.user;
 
-    // Add to database
-    const databaseRef = ref(db, 'users/' + user.uid);
-    // Create user data
-    const userData = {
-      email: email,
-      password: password,
-      last_login: Date.now(),
-    };
+//     // Add to database
+//     const databaseRef = ref(db, 'users/' + user.uid);
+//     // Create user data
+//     const userData = {
+//       email: email,
+//       password: password,
+//       last_login: Date.now(),
+//     };
 
-    set(databaseRef, userData)
-      .then(() => {
-          // Check if .login-popup has the 'active' class and remove it
-          const loginPopup = document.querySelector('.login-popup');
-          if (loginPopup.classList.contains('active')) {
-              loginPopup.classList.remove('active');
-          }
-          alert('User created, you can now login!');
-        //hide popup
-      })
-      .catch((error) => {
-          console.error('Error saving user data:', error);
-      });
-  })
-  .catch((error) => {
-    console.error('Error creating user:', error);
-    alert('Error creating user: ' + error.message);
-  });
-};
+//     set(databaseRef, userData)
+//       .then(() => {
+//           // Check if .login-popup has the 'active' class and remove it
+//           const loginPopup = document.querySelector('.login-popup');
+//           if (loginPopup.classList.contains('active')) {
+//               loginPopup.classList.remove('active');
+//           }
+//           alert('User created, you can now login!');
+//         //hide popup
+//       })
+//       .catch((error) => {
+//           console.error('Error saving user data:', error);
+//       });
+//   })
+//   .catch((error) => {
+//     console.error('Error creating user:', error);
+//     alert('Error creating user: ' + error.message);
+//   });
+// };
 
-// Attach the login function to the window object
-window.login = function() {
-    // Get all our inputs
-    const email = document.getElementById('emailInput').value;
-    const password = document.getElementById('passwordInput').value;
+// // Attach the login function to the window object
+// window.login = function() {
+//     // Get all our inputs
+//     const email = document.getElementById('emailInput').value;
+//     const password = document.getElementById('passwordInput').value;
   
-    // Validate input fields
-    if (!validateEmail(email) || !validatePassword(password)) {
-      alert('Your credentials do not match.');
-      return;
-    }
+//     // Validate input fields
+//     if (!validateEmail(email) || !validatePassword(password)) {
+//       alert('Your credentials do not match.');
+//       return;
+//     }
   
-    // Authenticate the user
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Get the signed-in user
-        const user = userCredential.user;
+//     // Authenticate the user
+//     signInWithEmailAndPassword(auth, email, password)
+//       .then((userCredential) => {
+//         // Get the signed-in user
+//         const user = userCredential.user;
   
-        // Create user data
-        const userData = {
-          last_login: Date.now(),
-        };
+//         // Create user data
+//         const userData = {
+//           last_login: Date.now(),
+//         };
   
-        // Add to database
-        const databaseRef = ref(db, 'users/' + user.uid);
-        update(databaseRef, userData)
-          .then(() => {
-            alert('User logged in successfully!');
+//         // Add to database
+//         const databaseRef = ref(db, 'users/' + user.uid);
+//         update(databaseRef, userData)
+//           .then(() => {
+//             alert('User logged in successfully!');
 
-          })
-          .catch((error) => {
-            console.error('Error updating user data:', error);
-          });
-      })
-      .catch((error) => {
-        console.error('Error signing in user:', error);
-        alert('Error signing in user: ' + error.message);
-      });
-};
+//           })
+//           .catch((error) => {
+//             console.error('Error updating user data:', error);
+//           });
+//       })
+//       .catch((error) => {
+//         console.error('Error signing in user:', error);
+//         alert('Error signing in user: ' + error.message);
+//       });
+// };
 
-// VALIDATION
+// // VALIDATION
 
-function validateEmail(email) {
-    const expression = /^[^@]+@\w+(\.\w+)+\w$/;
-    return expression.test(email);
-  }
+// function validateEmail(email) {
+//     const expression = /^[^@]+@\w+(\.\w+)+\w$/;
+//     return expression.test(email);
+//   }
   
-  function validatePassword(password) {
-    return password.length >= 6;
-  }
+//   function validatePassword(password) {
+//     return password.length >= 6;
+//   }
   
-  function validateField(field) {
-    return field != null && field.length > 0;
-  }
+//   function validateField(field) {
+//     return field != null && field.length > 0;
+//   }
   
   
   
