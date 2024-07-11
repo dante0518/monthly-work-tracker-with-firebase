@@ -74,6 +74,7 @@ function addShift() {
 
     updateShiftList();
     saveShiftsToFirestore();
+    window.alert('shifts added')
 }
 
 // Function to remove shift
@@ -89,6 +90,7 @@ function removeShift() {
             delete shifts[date];
             update(ref(db), { ['/shifts/' + date]: null }).then(() => {
                 console.log('Shift successfully deleted!');
+                window.alert('Shift deleted')
             }).catch(error => {
                 console.error('Error deleting shift:', error);
             });
@@ -153,6 +155,7 @@ function saveShiftsToFirestore() {
   
     update(ref(db), updates).then(() => {
       console.log('Shifts, totalWage, and totalHours successfully saved to Firestore!');
+      alert('Shifts, totalWage, and totalHours successfully saved.')
     }).catch(error => {
       console.error('Error saving data:', error);
     });
