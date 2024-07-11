@@ -216,6 +216,7 @@ main {
     .container {
         width: 100%;
         padding: 20px;
+        box-sizing: border-box; /* Ensure padding is included in width calculation */
         margin: auto; /* Centering the container */
     }
 
@@ -241,8 +242,13 @@ main {
     }
 
     main {
+        width: 100%;
+        padding: 15px;
+        margin-top: 10px;
+        display: flex;
         flex-direction: column;
         gap: 20px;
+        box-sizing: border-box;
         margin: auto; /* Centering the main section */
     }
 
@@ -283,8 +289,9 @@ main {
 
 /* Adjust for smaller screens like iPhones */
 @media (max-width: 768px) {
-    .container {
-        padding: 10px;
+    .container, main {
+        padding: 15px;
+        margin: auto; /* Centering both .container and main */
     }
 
     h1 {
@@ -304,8 +311,7 @@ main {
     }
 
     main {
-        padding: 15px;
-        margin: auto; /* Centering the main section */
+        gap: 20px;
     }
 
     .login-popup {
@@ -349,5 +355,75 @@ main {
 
     #shiftList th, #shiftList td {
         padding: 6px;
+    }
+}
+
+@media (max-width: 428px) {
+    .container, main {
+        padding: 12px;
+        margin: auto; /* Centering both .container and main */
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    select, input[type="date"], button {
+        padding: 6px;
+    }
+
+    .monthly-data, #shiftList, #totalHours, #totalWage {
+        padding: 10px;
+    }
+
+    #shiftList th, #shiftList td {
+        padding: 4px;
+    }
+
+    main {
+        gap: 15px;
+    }
+
+    .login-popup {
+        padding: 12px;
+        margin: auto; /* Centering the login popup */
+    }
+
+    .login-popup .close-btn {
+        right: -12px;
+    }
+
+    .login-popup .form h2 {
+        font-size: 1.2rem;
+    }
+
+    .login-popup .form .form-element label {
+        font-size: 0.9rem;
+    }
+
+    .login-popup .form .form-element input[type="text"],
+    .login-popup .form .form-element input[type="password"] {
+        padding: 5px;
+    }
+
+    .login-popup .form .form-element button.sign-in,
+    .login-popup .form .form-element button.register {
+        font-size: 0.7rem;
+    }
+
+    .login-popup .form .form-element a {
+        font-size: 0.7rem;
+    }
+
+    /* Centering #shiftList */
+    #shiftList {
+        width: 100%;
+        padding: 10px;
+        margin: auto; /* Centering #shiftList */
+        box-sizing: border-box;
+    }
+
+    #shiftList th, #shiftList td {
+        padding: 4px;
     }
 }
