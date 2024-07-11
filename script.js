@@ -165,28 +165,28 @@ function saveShiftsToLocalStorage() {
 }
 
 
-// LOGIN
+// // LOGIN
 
-document.querySelector('#loginButton').addEventListener('click', function(){
-    document.querySelector('.login-popup').classList.add('active');
-    document.querySelector('.container').classList.add('blur');
-    document.querySelector('#shiftList').classList.add('blur');
+// document.querySelector('#loginButton').addEventListener('click', function(){
+//     document.querySelector('.login-popup').classList.add('active');
+//     document.querySelector('.container').classList.add('blur');
+//     document.querySelector('#shiftList').classList.add('blur');
 
-    if(document.querySelector('.login-popup').classList.contains('active')){
-        disableScroll();
-    }
-})
+//     if(document.querySelector('.login-popup').classList.contains('active')){
+//         disableScroll();
+//     }
+// })
 
-document.querySelector('.close-btn').addEventListener('click', function(){
-    document.querySelector('.login-popup').classList.remove('active')
-    document.querySelector('.container').classList.remove('blur');
-    document.querySelector('#shiftList').classList.remove('blur');
-    enableScroll();
-})
+// document.querySelector('.close-btn').addEventListener('click', function(){
+//     document.querySelector('.login-popup').classList.remove('active')
+//     document.querySelector('.container').classList.remove('blur');
+//     document.querySelector('#shiftList').classList.remove('blur');
+//     enableScroll();
+// })
 
-function disableScroll(){
-    document.body.style.overflow = "hidden";
-}
-function enableScroll(){
-    document.body.style.overflow = "";
-}
+// function disableScroll(){
+//     document.body.style.overflow = "hidden";
+// }
+// function enableScroll(){
+//     document.body.style.overflow = "";
+// }
