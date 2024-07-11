@@ -1,0 +1,134 @@
+{
+    "2024-06-06": {
+        "shiftHours": 3.5,
+        "totalAmount": 8750,
+        "totalHoursInMonth": 3.5,
+        "totalWageInMonth": 3.5
+    },
+    "2024-06-07": {
+        "shiftHours": 3.5,
+        "totalAmount": 8750,
+        "totalHoursInMonth": 3.5,
+        "totalWageInMonth": 3.5
+    },
+    "2024-06-08": {
+        "shiftHours": 3.5,
+        "totalAmount": 8750,
+        "totalHoursInMonth": 3.5,
+        "totalWageInMonth": 3.5
+    },
+    "2024-06-09": {
+        "shiftHours": 3,
+        "totalAmount": 7500,
+        "totalHoursInMonth": 3,
+        "totalWageInMonth": 3
+    },
+    "2024-06-10": {
+        "shiftHours": 3.5,
+        "totalAmount": 8750,
+        "totalHoursInMonth": 3.5,
+        "totalWageInMonth": 3.5
+    },
+    "2024-06-12": {
+        "shiftHours": 2.25,
+        "totalAmount": 5625,
+        "totalHoursInMonth": 2.25,
+        "totalWageInMonth": 2.25
+    },
+    "2024-06-13": {
+        "shiftHours": 2.25,
+        "totalAmount": 5625,
+        "totalHoursInMonth": 2.25,
+        "totalWageInMonth": 2.25
+    },
+    "2024-06-14": {
+        "shiftHours": 6.75,
+        "totalAmount": 16875,
+        "totalHoursInMonth": 6.75,
+        "totalWageInMonth": 6.75
+    },
+    "2024-06-15": {
+        "shiftHours": 10.5,
+        "totalAmount": 26250,
+        "totalHoursInMonth": 10.5,
+        "totalWageInMonth": 10.5
+    },
+    "2024-06-16": {
+        "shiftHours": 10.5,
+        "totalAmount": 26250,
+        "totalHoursInMonth": 10.5,
+        "totalWageInMonth": 10.5
+    },
+    "2024-06-17": {
+        "shiftHours": 3.5,
+        "totalAmount": 8750,
+        "totalHoursInMonth": 3.5,
+        "totalWageInMonth": 3.5
+    },
+    "2024-06-18": {
+        "shiftHours": 3.5,
+        "totalAmount": 8750,
+        "totalHoursInMonth": 3.5,
+        "totalWageInMonth": 3.5
+    },
+    "2024-06-20": {
+        "shiftHours": 5.5,
+        "totalAmount": 13750,
+        "totalHoursInMonth": 5.5,
+        "totalWageInMonth": 5.5
+    },
+    "2024-06-21": {
+        "shiftHours": 3.5,
+        "totalAmount": 8750,
+        "totalHoursInMonth": 3.5,
+        "totalWageInMonth": 3.5
+    },
+    "2024-06-22": {
+        "shiftHours": 12.5,
+        "totalAmount": 31250,
+        "totalHoursInMonth": 12.5,
+        "totalWageInMonth": 12.5
+    },
+    "2024-06-23": {
+        "shiftHours": 8.75,
+        "totalAmount": 21875,
+        "totalHoursInMonth": 8.75,
+        "totalWageInMonth": 8.75
+    },
+    "2024-06-24": {
+        "shiftHours": 3.5,
+        "totalAmount": 8750,
+        "totalHoursInMonth": 3.5,
+        "totalWageInMonth": 3.5
+    },
+    "2024-06-25": {
+        "shiftHours": 10.5,
+        "totalAmount": 26250,
+        "totalHoursInMonth": 10.5,
+        "totalWageInMonth": 10.5
+    },
+    "2024-06-26": {
+        "shiftHours": 9.5,
+        "totalAmount": 23750,
+        "totalHoursInMonth": 9.5,
+        "totalWageInMonth": 9.5
+    },
+    "2024-06-27": {
+        "shiftHours": 9.5,
+        "totalAmount": 23750,
+        "totalHoursInMonth": 9.5,
+        "totalWageInMonth": 9.5
+    },
+    "2024-06-28": {
+        "shiftHours": 3.5,
+        "totalAmount": 8750,
+        "totalHoursInMonth": 3.5,
+        "totalWageInMonth": 3.5
+    },
+    "2024-06-30": {
+        "shiftHours": 5.5,
+        "totalAmount": 13750,
+        "totalHoursInMonth": 5.5,
+        "totalWageInMonth": 5.5
+    }
+}

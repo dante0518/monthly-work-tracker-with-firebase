@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Napi munkaidő rögzítése</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <h1>Napi munkaidő rögzítése</h1>
+            
+            <label for="month">Hónap kiválasztása:</label>
+            <select id="month" >
+                <!-- JS -->
+            </select>
+            <button id="calculateMonthStats">Hónap adatainak betöltése</button>
+            <div class="monthly-data">
+                <p id="monthlyHours">Ledolgozott munkaórák a hónapban: 0 óra</p>
+                <p id="monthlyWage">Keresett összeg a hónapban: 0 Ft</p>
+            </div>
+    
+            <label for="date">Dátum:</label>
+            <input type="date" id="date">
+            <label for="shift">Műszak kiválasztása:</label>
+            <select id="shift">
+                <option value="2.25">8:45 - 11:00</option>
+                <option value="3.5">10:30 - 14:00</option>
+                <option value="3">11:00 - 14:00</option>
+                <option value="2">14:00 - 16:00</option>
+                <option value="2">16:00 - 18:00</option>
+                <option value="2">18:00 - 20:00</option>
+                <option value="3.25">18:00 - 21:15</option>
+            </select>
+    
+            <button id="addShiftButton">Műszak hozzáadása</button>
+            <button id="removeShiftButton">Kijelölt műszak eltávolítása</button>
+            <button id="save">Mentés</button>
+            <button id="saveToFirebaseButton">Mentés adatbázisba</button>
+                    
+            <!-- <p id="totalHours">Összes munkaidő: 0 óra</p>
+            <p id="totalWage">Összeg: 0 Ft</p> -->
+        </div>
+    
+        <div id="shiftList">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dátum</th>
+                        <th>Műszak hossza (óra)</th>
+                        <th>Keresett összeg (Ft)</th>
+                    </tr>
+                </thead>
+                <tbody id="shiftListBody">
+                    <!-- Shifts will be dynamically added here -->
+                </tbody>
+            </table>
+            <p id="totalHours">Összes munkaidő: 0 óra</p>
+            <p id="totalWage">Összeg: 0 Ft</p>
+        </div>
+        
+
+    </main>
+    
+    <script type="module" src="firebase.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
